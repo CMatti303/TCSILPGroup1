@@ -1,0 +1,76 @@
+<app-header></app-header>
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm">
+                <img id="profile-image" src="assets/images/greycircle.png" onerror="this.src='assets/images/greycircle.png'" class="img-fluid"><br>
+                <div class="btn-group m-1" role="group">
+                    <button id="profile-delete-button" type="button" class="btn btn-warning">Delete Image</button>
+                </div>
+                <div class="btn-group m-1" role="group">
+                    <button id="profile-upload-button" type="button" class="btn btn-primary">Upload</button>
+                </div>
+            </div>
+            <div class="col-sm">
+                <p>Firstname</p>
+                <p class="font-bold"><span id="profile-first-name">John</span></p>
+                <p>Email</p>
+                <p class="font-bold">john@gmail.com</p>
+                <p>Phone</p>
+                <p class="font-bold">89333221122</p>
+                <p>Interests</p>
+                <p class="font-bold">Apple, Samsung, Laptops</p>
+                <p>Address</p>
+                <p *ngIf="isHidden" class="font-bold">83, Fifth Avenue, New York</p>
+                <div *ngIf="isHidden" class="btn-group m-1" role="group">
+                    <button (click)="toggleHidden()" id="address-edit-button" type="button" class="btn btn-primary">Edit</button>
+                </div>
+
+                <form *ngIf="!isHidden" [formGroup]="profileEditAddressForm">
+                    <div class="form-group">
+                        <label for="inputStreet">Street Address</label>
+                        <input type="text" class="form-control" id="inputStreet" formControlName="street"
+                            [ngClass]="{'is-invalid':
+                                profileEditAddressForm.get('street')?.touched &&
+                                profileEditAddressForm.get('street')?.invalid
+                            }">
+                        <div class="invalid-feedback">Street Address is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity" formControlName="city"
+                            [ngClass]="{'is-invalid':
+                                profileEditAddressForm.get('city')?.touched &&
+                                profileEditAddressForm.get('city')?.invalid
+                            }">
+                        <div class="invalid-feedback">City is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputState">State</label>
+                        <input type="text" class="form-control" id="inputState" formControlName="state"
+                            [ngClass]="{'is-invalid':
+                                profileEditAddressForm.get('state')?.touched &&
+                                profileEditAddressForm.get('state')?.invalid
+                            }">
+                        <div class="invalid-feedback">State is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputZip">Zip Code</label>
+                        <input type="text" class="form-control" id="inputZip" formControlName="zip"
+                            [ngClass]="{'is-invalid':
+                                profileEditAddressForm.get('zip')?.touched &&
+                                profileEditAddressForm.get('zip')?.invalid
+                            }">
+                        <div class="invalid-feedback">Zip Code is required</div>
+                    </div>
+                    <button *ngIf="!isHidden" (click)="toggleHidden()" type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+            <div class="col-sm">
+                <p>Lastname</p>
+                <p class="font-bold"><span id="profile-first-name">Walker</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

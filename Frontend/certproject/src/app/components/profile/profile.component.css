@@ -1,0 +1,11 @@
+.card {
+    margin: 0 auto;
+    float: none;
+    width: 60rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p.font-bold {
+    font-weight: bold;
+}
