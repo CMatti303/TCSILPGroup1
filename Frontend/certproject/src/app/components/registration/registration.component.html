@@ -1,0 +1,79 @@
+<app-header></app-header>
+<div class="container" style="padding-top: 5rem">
+  
+  <div class="row col-12">
+    <div class="col-5" style="padding: 5rem">
+      <h1>Welcome to Shop 24x7</h1>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="col-5 offset-1" style="border:solid 1px lightgrey; padding: 5rem">
+      <div class="card-body">
+          <form  [formGroup]="registeringUserForm" (ngSubmit)="receivingUserData()" >
+              <h2 >Register</h2>
+             <div class="row g-3"> 
+
+                <div class="col-sm">
+                  <label for="firstname" class="form-label">FirstName</label>
+                  <input type="text" class="form-control" id="firstname" formControlName="firstname"
+                  [ngClass]="{'is-invalid': (submitted && registeringUserForm.get('firstname')?.invalid) || (registeringUserForm.get('firstname')?.touched && registeringUserForm.get('firstname')?.invalid)}">
+                
+                <div class="invalid-feedback">
+                  <div *ngIf="registeringUserForm.get('firstname')?.errors?.['required']">Name is required</div>
+                </div> 
+                </div>
+
+                <div class="col-sm">
+                  <label for="lastname" class="form-label"  >LastName</label>
+                  <input type="text" class="form-control" id="lastname" formControlName="lastname"
+                  [ngClass]="{'is-invalid': (submitted && registeringUserForm.get('lastname')?.invalid) || (registeringUserForm.get('lastname')?.touched && registeringUserForm.get('lastname')?.invalid)}">
+                
+                <div class="invalid-feedback">
+                  <div *ngIf="registeringUserForm.get('lastname')?.errors?.['required']">Last Name is required</div>
+                </div> 
+                </div>
+
+              </div>  <!--row ends-->
+
+              <div class="mb-3">
+                <label for="email" class="form-label"  >Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email"
+                [ngClass]="{'is-invalid': (submitted && registeringUserForm.get('email')?.invalid) || (registeringUserForm.get('email')?.touched && registeringUserForm.get('email')?.invalid)}">
+
+                <div class="invalid-feedback">
+                  <div *ngIf="registeringUserForm.get('email')?.errors?.['required']">Email is required</div>
+                  <div *ngIf="registeringUserForm.get('email')?.errors?.['email']">Enter a valid email address</div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label"  >Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password"
+                [ngClass]="{'is-invalid': (submitted && registeringUserForm.get('password')?.invalid) || (registeringUserForm.get('password')?.touched && registeringUserForm.get('password')?.invalid)}">
+              
+                <div class="invalid-feedback">
+                  <div *ngIf="registeringUserForm.get('password')?.errors?.['required']">Password is required</div>
+                  <div *ngIf="registeringUserForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters</div>
+                </div>
+              </div>
+
+
+              <div class="mb-3">
+                  <label for="confPassword" class="form-label"  >Confirm Password</label>
+                  <input type="password" class="form-control" id="confPassword" formControlName="confPassword"
+                  [ngClass]="{'is-invalid': (submitted && registeringUserForm.get('confPassword')?.invalid) || (registeringUserForm.get('confPassword')?.touched && registeringUserForm.get('confPassword')?.invalid)}">
+              
+                  <div class="invalid-feedback">
+                    <div *ngIf="registeringUserForm.get('confPassword')?.errors?.['required']">Confirm password is required</div>
+                    <div *ngIf="registeringUserForm.get('confPassword')?.errors?.['mismatch']">Password Mismatch</div>
+                  </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" >Submit</button>
+        </form>
+        </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
