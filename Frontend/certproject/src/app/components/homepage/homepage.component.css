@@ -1,0 +1,55 @@
+.carousel {
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.spacer {
+    height: 50px
+}
+
+.card {
+    border: none
+}
+
+h5 {
+    margin: 0;
+    display: inline-block;
+  }
+  
+  button {
+    float: right;
+  }
+
+  #img-top-products{
+    border-radius: 25px 25px 0 0;
+  }
+  #body-top-products{
+    background-color: lightgrey;
+    border-radius: 0 0 25px 25px;
+  }
+
+
+  /* Make the tag position relative to the figure */
+.figure.tag {
+    position: relative;
+  }
+
+  /* base styles in all tags */
+.figure.tag::before {
+    position: absolute;
+    top: 10%;
+    display: block;
+    color: black;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+  }
+
+  /*variations for different tags */
+.figure.tag-televisions::before {
+    content: "#1 in Televisions";
+    background: orange;
+  }
+  .figure.tag-mobile::before {
+    content: "#1 in Mobile phones";
+    background: orange;
+  }
