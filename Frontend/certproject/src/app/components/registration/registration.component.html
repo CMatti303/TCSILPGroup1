@@ -15,8 +15,8 @@
              <div class="row g-3"> 
 
                 <div class="col-sm">
-                  <label for="firstname" class="form-label">FirstName</label>
-                  <input type="text" class="form-control" id="firstname" formControlName="firstname"
+                  <label for="register-first-name" class="form-label">FirstName</label>
+                  <input type="text" class="form-control" id="register-first-name" formControlName="firstname"
                   [ngClass]="{'is-invalid': (submitted && registeringUserForm.get('firstname')?.invalid) || (registeringUserForm.get('firstname')?.touched && registeringUserForm.get('firstname')?.invalid)}">
                 
                 <div class="invalid-feedback">
@@ -25,8 +25,8 @@
                 </div>
 
                 <div class="col-sm">
-                  <label for="lastname" class="form-label"  >LastName</label>
-                  <input type="text" class="form-control" id="lastname" formControlName="lastname"
+                  <label for="register-last-name" class="form-label"  >LastName</label>
+                  <input type="text" class="form-control" id="register-last-name" formControlName="lastname"
                   [ngClass]="{'is-invalid': (submitted && registeringUserForm.get('lastname')?.invalid) || (registeringUserForm.get('lastname')?.touched && registeringUserForm.get('lastname')?.invalid)}">
                 
                 <div class="invalid-feedback">
@@ -37,8 +37,8 @@
               </div>  <!--row ends-->
 
               <div class="mb-3">
-                <label for="email" class="form-label"  >Email</label>
-                <input type="email" class="form-control" id="email" formControlName="email"
+                <label for="register-email" class="form-label"  >Email</label>
+                <input type="email" class="form-control" id="register-email" formControlName="email"
                 [ngClass]="{'is-invalid': (submitted && registeringUserForm.get('email')?.invalid) || (registeringUserForm.get('email')?.touched && registeringUserForm.get('email')?.invalid)}">
 
                 <div class="invalid-feedback">
@@ -48,8 +48,8 @@
               </div>
 
               <div class="mb-3">
-                <label for="password" class="form-label"  >Password</label>
-                <input type="password" class="form-control" id="password" formControlName="password"
+                <label for="register-password" class="form-label"  >Password</label>
+                <input type="password" class="form-control" id="register-password" formControlName="password"
                 [ngClass]="{'is-invalid': (submitted && registeringUserForm.get('password')?.invalid) || (registeringUserForm.get('password')?.touched && registeringUserForm.get('password')?.invalid)}">
               
                 <div class="invalid-feedback">
@@ -60,8 +60,8 @@
 
 
               <div class="mb-3">
-                  <label for="confPassword" class="form-label"  >Confirm Password</label>
-                  <input type="password" class="form-control" id="confPassword" formControlName="confPassword"
+                  <label for="register-confirm-password" class="form-label"  >Confirm Password</label>
+                  <input type="password" class="form-control" id="register-confirm-password" formControlName="confPassword"
                   [ngClass]="{'is-invalid': (submitted && registeringUserForm.get('confPassword')?.invalid) || (registeringUserForm.get('confPassword')?.touched && registeringUserForm.get('confPassword')?.invalid)}">
               
                   <div class="invalid-feedback">
@@ -70,7 +70,7 @@
                   </div>
               </div>
 
-              <button type="submit" class="btn btn-primary" >Submit</button>
+              <button type="submit" class="btn btn-primary" id="register-submit">Submit</button>
         </form>
         </div>
     </div>

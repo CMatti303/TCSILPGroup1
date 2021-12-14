@@ -8,7 +8,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
+
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { ProductCategoryComponent } from './components/product-category/product-category.component';
+import { ProductService } from './services/product.service';
+
 import { ProfileComponent } from './components/profile/profile.component';
+
 
 
 @NgModule({
@@ -18,6 +24,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
+    HomepageComponent,
+    ProductCategoryComponent,
     ProfileComponent
   ],
   imports: [
@@ -26,7 +34,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
