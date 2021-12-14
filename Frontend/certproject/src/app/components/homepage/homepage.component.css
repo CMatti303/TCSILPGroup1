@@ -46,7 +46,7 @@ h5 {
 
   /*variations for different tags */
 .figure.tag-televisions::before {
-    content: "#1 in Televisions";
+    content: "#1 in TVs";
     background: orange;
   }
   .figure.tag-mobile::before {
