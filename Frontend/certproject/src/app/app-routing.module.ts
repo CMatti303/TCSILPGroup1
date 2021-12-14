@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 
 const routes: Routes = [
 
 {path:'register', component: RegistrationComponent},
 {path:'login', component: LoginComponent},
+{path:'categories/:category_id', component: ProductCategoryComponent},
 {path:'', component: HomepageComponent},
 ];
 
