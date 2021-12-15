@@ -5,12 +5,13 @@ import { LoginComponent } from './components/login/login.component';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
 
 {path:'register', component: RegistrationComponent},
 {path:'login', component: LoginComponent},
-
+{path:'cart', component: CartComponent},
 {path:'categories/:category_id', component: ProductCategoryComponent},
 {path:'', component: HomepageComponent},
 

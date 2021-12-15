@@ -2,7 +2,7 @@
 <div class="spacer"></div>
 <div class="container">
 
-        <div id="homepage-banner" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div data-testid="homepage-banner" class="carousel slide mb-5" data-bs-ride="carousel">
             <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="../../../assets/img/slide1.jpg" class="d-block w-100" alt="...">
@@ -19,21 +19,21 @@
 
         <div class="row row-cols-1 row-cols-md-3"><!--3 columns-->
         
-            <div id="homepage-category" class="col mb-3">
-            <div class="card">
-                <a routerLink="categories/1"><img src="../../../assets/img/mobile.jpg" style="border-radius: 25px;" class="card-img-top" alt="..."></a>
+            <div class="col mb-3">
+            <div data-testid="homepage-category" class="card">
+                <a routerLink="categories/1"><img src="../../../assets/img/mobile.jpg" style="border-radius: 15px;" class="card-img-top" alt="..."></a>
             </div>
             </div>
 
-            <div id="homepage-category" class="col mb-3">
-            <div class="card">
-                <a routerLink="categories/2"><img src="../../../assets/img/tv.jpg" style="border-radius: 25px;" class="card-img-top" alt="..."></a>
+            <div class="col mb-3">
+            <div  data-testid="homepage-category" class="card">
+                <a routerLink="categories/2"><img src="../../../assets/img/tv.jpg" style="border-radius: 15px;" class="card-img-top" alt="..."></a>
             </div>
             </div>
 
-            <div id="homepage-category" class="col mb-3">
-            <div class="card">
-                <a routerLink="categories/3"><img src="../../../assets/img/furniture.jpg" style="border-radius: 25px;" class="card-img-top" alt="..."></a>
+            <div class="col mb-3">
+            <div data-testid="homepage-category" class="card">
+                <a routerLink="categories/3"><img src="../../../assets/img/furniture.jpg" style="border-radius: 15px;" class="card-img-top" alt="..."></a>
             </div>
             </div>
         
@@ -42,13 +42,13 @@
 
         <div  class="row row-cols-1 row-cols-md-4"><!--4 columns-->
         <ng-container *ngFor="let product of topProducts">
-            <div id="homepage-product" class="col mb-3">
+            <div data-testid="homepage-product" class="col mb-3">
 
                 <div *ngIf="product.name=='Class FHD (1080P) LED Roku'; else falsecondition" class="card" >
                     <figure class="figure tag tag-televisions">
                         <img src="../../../assets/img/img1.jpg" id ="img-top-products"  class="card-img-top" alt="...">
                         <div class="card-body" id="body-top-products">
-                            <h5>$ {{product.price}} </h5><button type="button" class="pull-right" class="btn btn-primary">Add to cart</button>
+                            <h5>{{product.price | currency}} </h5><button type="button" class="pull-right" class="btn btn-primary" (click)="addToCart(product)">Add to cart</button>
                         </div>
                         <div>{{product.name}}</div>
                     </figure>
@@ -58,7 +58,7 @@
                         <figure class="figure">
                             <img src="../../../assets/img/img1.jpg" id ="img-top-products"  class="card-img-top" alt="...">
                             <div class="card-body" id="body-top-products">
-                                <h5>$ {{product.price}} </h5><button type="button" class="pull-right" class="btn btn-primary">Add to cart</button>
+                                <h5>{{product.price | currency}} </h5><button type="button" class="pull-right" class="btn btn-primary" (click)="addToCart(product)">Add to cart</button>
                             </div>
                             <div>{{product.name}}</div>
                         </figure>

@@ -14,7 +14,8 @@ productArray: Product[]=[
     price: 360,
     img: "",
     description: "6.7-inch Super Retina XDR Display ",
-    rating:8},
+    rating:8,
+    percentageDiscount:10},
   {
     id: 2,
     name: "iPhone 12 Pro Max",
@@ -22,7 +23,8 @@ productArray: Product[]=[
     price: 860,
     img: "",
     description: "128GB, Navy Blue ",
-    rating:10},
+    rating:10,
+    percentageDiscount:10},
   {
     id: 3,
     name: "Straight Talk Motorola Moto G Play",
@@ -30,7 +32,8 @@ productArray: Product[]=[
     price: 560,
     img: "",
     description: "32GB, Blue ",
-    rating:10},
+    rating:10,
+    percentageDiscount:30},
   {
     id: 4,
     name: "Toshiba",
@@ -38,7 +41,8 @@ productArray: Product[]=[
     price: 199,
     img: "",
     description: "Class V35 Series LED Full HD Smart Fire TV",
-    rating:10},  
+    rating:10,
+    percentageDiscount:0},  
   {
     id: 5,
     name: "Class FHD (1080P) LED Roku",
@@ -46,7 +50,8 @@ productArray: Product[]=[
     price: 360,
     img: "",
     description: "Smart TV HDR ",
-    rating:10},
+    rating:10,
+    percentageDiscount:0},
   {
     id: 6,
     name: "High End Office Desks Ceo Furniture Office Table",
@@ -54,7 +59,8 @@ productArray: Product[]=[
     price: 500,
     img: "",
     description: "Executive Desk Furniture L Shape Desk Luxury Ceo Table",
-    rating:10},
+    rating:10,
+    percentageDiscount:40},
   {
     id: 7,
     name: "High End Office Lamp",
@@ -62,7 +68,8 @@ productArray: Product[]=[
     price: 100,
     img: "",
     description: "Executive Luxury Ceo Lamp",
-    rating:1},
+    rating:1,
+    percentageDiscount:0},
   {
     id: 8,
     name: "High End Office Chair",
@@ -70,7 +77,8 @@ productArray: Product[]=[
     price: 100,
     img: "",
     description: "Executive Desk Furniture Chair",
-    rating:10},
+    rating:10,
+    percentageDiscount:10},
   {
     id: 9,
     name: "Office Storage Cabinet",
@@ -78,7 +86,8 @@ productArray: Product[]=[
     price: 500,
     img: "",
     description: "Shelf Storage Cabinet",
-    rating:10}
+    rating:10,
+    percentageDiscount:0}
 ]
 
 categoryArr: Category[]=[

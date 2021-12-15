@@ -6,4 +6,5 @@ export interface Product{
     img: String;
     description: String;
     rating:number;
+    percentageDiscount: number
 }
