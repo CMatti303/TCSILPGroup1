@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/Product';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -10,11 +11,17 @@ import { ProductService } from 'src/app/services/product.service';
 export class HomepageComponent implements OnInit {
   products: Product[]=[]
   topProducts: Product[]=[]
-  constructor(private _productService: ProductService) { }
+
+  cart: Product[]=[]
+  grandTotal: number = 0
+
+  constructor(private _productService: ProductService, private _cartService: CartService) { }
 
   ngOnInit(): void {
     this.products=this._productService.getAllProducts()
     this.find8TopProducts(this.products)
+    this._cartService.currentCart.subscribe(res=>this.cart=res)
+    this._cartService.currentGrandTotal.subscribe(res=>this.grandTotal=res)
   }
 
   find8TopProducts(products: Product[]){
@@ -23,7 +30,9 @@ export class HomepageComponent implements OnInit {
       else if (product.rating==9 && this.topProducts.length<8) this.topProducts.push(product)
       else if (product.rating==8 && this.topProducts.length<8) this.topProducts.push(product)
     }
-    console.log(this.topProducts)
   }
 
+  addToCart(product: Product){
+    this._cartService.addToCart(product)
+  }
 }

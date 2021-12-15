@@ -14,6 +14,8 @@ import { ProductCategoryComponent } from './components/product-category/product-
 import { ProductService } from './services/product.service';
 
 import { ProfileComponent } from './components/profile/profile.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CartService } from './services/cart.service';
 
 
 
@@ -26,7 +28,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     LoginComponent,
     HomepageComponent,
     ProductCategoryComponent,
-    ProfileComponent
+    ProfileComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
