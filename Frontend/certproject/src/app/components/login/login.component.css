@@ -1,0 +1,27 @@
+
+.login-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.welcome-container {
+    margin: 70px;
+    width: 50%;
+}
+.form-container {
+    width: 50%;
+}
+
+form {
+    margin: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 550px;
+}
+
+form input {
+    margin-bottom: 20px;
+}
