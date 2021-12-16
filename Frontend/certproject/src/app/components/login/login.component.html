@@ -1,1 +1,56 @@
-<p>login works!</p>
+<app-header></app-header>
+
+<div class="login-container">
+
+    <div class="welcome-container">
+        <h2>Welcome to shop 24x7</h2>
+
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam blanditiis omnis alias odit, voluptas accusantium, voluptatibus natus aliquam dolorum doloribus, ratione laudantium ipsa consectetur deserunt ea tenetur esse fugit quasi.</p>
+
+    </div>
+    <div class="form-container">
+       
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+        </button>
+    </div>
+</form>
+
+    <!-- <form class=" border border-light p-5">
+
+        <p class="h4 mb-4"> Login </p>
+  
+        <label for=""> Email </label>
+        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+        
+        <label for=""> Password </label>
+        <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+          At least 8 characters and 1 digit
+        </small>
+  
+        <button mdbBtn color="info" block="true" class="my-4" type="submit"> Login </button>  
+      </form> -->
+    </div>
+</div>
+
+
+<app-footer></app-footer>

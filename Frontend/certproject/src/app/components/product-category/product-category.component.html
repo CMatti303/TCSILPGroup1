@@ -24,7 +24,7 @@
                         <figure class="figure ">
                             <img src="../../../assets/img/img1.jpg" id ="img-top-products"  class="card-img-top" alt="...">
                             <div class="card-body" id="body-top-products">
-                                <h5>{{product.price}}</h5><button type="button" class="pull-right" class="btn btn-primary">Add to cart</button>
+                                <h5>{{product.price | currency}}</h5><button type="button" class="pull-right" class="btn btn-primary" (click)="addToCart(product)">Add to cart</button>
                             </div>
                         </figure>
                     </div>

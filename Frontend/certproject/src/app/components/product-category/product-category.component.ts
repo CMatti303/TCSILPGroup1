@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/Product';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -13,13 +14,17 @@ export class ProductCategoryComponent implements OnInit {
   categoryName=''
   products: Product[]=[]
 
-  constructor(private route: ActivatedRoute, private _productService: ProductService) { }
+  cart: Product[]=[]
+  grandTotal: number = 0
+
+  constructor(private route: ActivatedRoute, private _productService: ProductService, private _cartService: CartService) { }
 
   ngOnInit(): void {
     this.category_id=parseInt(this.route.snapshot.paramMap.get('category_id') as string)
     this.products=this._productService.getProductsByCategory(this.category_id)
     this.categoryName=this._productService.getCategoryName(this.category_id)
-    console.log(this.category_id)
+    this._cartService.currentCart.subscribe(res=>this.cart=res)
+    this._cartService.currentGrandTotal.subscribe(res=>this.grandTotal=res)
   }
 
   filterProducts(num1: number, num2: number){
@@ -28,5 +33,9 @@ export class ProductCategoryComponent implements OnInit {
       return (product.price>=num1 && product.price<=num2)
     })
     this.products=filteredProducts
+  }
+
+  addToCart(product: Product){
+    this._cartService.addToCart(product)
   }
 }

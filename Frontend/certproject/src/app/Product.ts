@@ -3,7 +3,9 @@ export interface Product{
     name: String;
     category_id: number;
     price: number;
-    img: String;
+    discountPrice: number;
+    image: String;
     description: String;
-    rating:number;
+    createdOn: Date;
+    isTopProduct: boolean
 }

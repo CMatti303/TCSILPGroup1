@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="spacer"></div>
+<div class="container">
+
+<div class="col-8 offset-2" >
+<h3 style="padding-top: 1rem; padding-bottom: 1rem;">Cart</h3>
+<ng-template *ngIf="cart.length!=0; then truecondition; else falsecondition">
+</ng-template>
+<ng-template #truecondition>
+<table class="table ">  
+    <tbody >
+      <tr  style="border-bottom: 3px" *ngFor="let product of cart">
+        <td >
+            <span>1 X {{product.name}}</span><br>
+            <span>Price {{product.price | currency}}</span><br>
+            <span>Discount {{product.discountPrice | currency}}</span><br>
+            <button  (click)="removeProduct(product)" style="color:red; background-color: transparent; border:none">Remove</button>
+        </td>
+        <td style="text-align: right">{{product.discountPrice | currency}}</td>
+      </tr>
+      <tr>
+          <td data-testid="cart-grand-total" style="text-align: right">Grand Total</td>
+          <td style="text-align: right">{{grandTotal | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button data-testid="cart-button" type="button" class="btn btn-warning" style="float: right;">Checkout</button>
+</ng-template>
+<ng-template #falsecondition>
+  <p>You cart is empty</p>
+</ng-template>
+</div>
+</div>
+<app-footer></app-footer>
