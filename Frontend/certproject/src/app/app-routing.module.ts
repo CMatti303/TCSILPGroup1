@@ -8,7 +8,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { OrderComponent } from './components/order/order.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 const routes: Routes = [
 
@@ -19,7 +19,7 @@ const routes: Routes = [
 {path:'products/:product_id', component: ProductPageComponent},
 {path:'checkout', component: CheckoutComponent},
 {path:'', component: HomepageComponent},
-{path:'orders', component: OrderComponent},
+{path:'orders', component: OrdersComponent},
 {path: 'profile', component: ProfileComponent}
 
 ];

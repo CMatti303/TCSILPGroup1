@@ -18,7 +18,7 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { CartComponent } from './components/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { OrderComponent } from './components/order/order.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 
 
@@ -35,7 +35,7 @@ import { OrderComponent } from './components/order/order.component';
     ProductPageComponent,
     CheckoutComponent,
     CartComponent,
-    OrderComponent
+    OrdersComponent
 
   ],
   imports: [

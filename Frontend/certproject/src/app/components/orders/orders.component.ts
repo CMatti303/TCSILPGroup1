@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-order',
-  templateUrl: './order.component.html',
-  styleUrls: ['./order.component.css']
+  selector: 'app-orders',
+  templateUrl: './orders.component.html',
+  styleUrls: ['./orders.component.css']
 })
-export class OrderComponent implements OnInit {
-  orderList : any = []
+export class OrdersComponent implements OnInit {
+  ordersList : any = []
   constructor() { }
   
   ngOnInit(): void {
-   this.orderList = [{
+   this.ordersList = [{
      "order_no" : "#2232323231",
      "email" : "example@gmail.com"
    },

@@ -4,11 +4,11 @@
 
      <div class="col-8 offset-2" >
      <h3 style="padding-top: 1rem; padding-bottom: 1rem;">Your Orders</h3>
-     <ng-template *ngIf="orderList.length!=0; then truecondition; else falsecondition">
+     <ng-template *ngIf="ordersList.length!=0; then truecondition; else falsecondition">
      </ng-template>
      <ng-template #truecondition>
           <table class="table table-bordered">
-               <tr *ngFor = "let order of orderList" class="mb-1">
+               <tr *ngFor = "let order of ordersList" class="mb-1">
                     <td>
                          {{order.order_no}}<br>
                          {{order.email}}
