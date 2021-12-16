@@ -1,0 +1,67 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="row">
+        <h1>{{currentProduct.name}}</h1>
+    </div>
+    <div class="row">
+        <img id="product-page-banner" src="assets/img/slide1.jpg" onerror="this.src='assets/img/slide1.jpg'" class="img-fluid">
+    </div>
+    <div class="row">
+         <div class="col width-">
+
+            <p id="pricing">${{currentProduct.price}} <span id="original-price">${{currentProduct.price}}</span></p>
+            
+            <div class="btn-group m-1" role="group">
+                <button id="product-page-buynow" type="button" class="btn btn-warning" routerLink="/checkout" routerLinkActive="active">Buy Now</button>
+            </div>
+
+            <div class="btn-group m-1" role="group">
+                <button id="product-page-add-to-cart" type="button" class="btn btn-primary" routerLink="/cart" routerLinkActive="active">Add to Cart</button>
+            </div>
+
+         </div>
+         <div class="col">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor lectus vitae egestas luctus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce et elit sit amet massa mattis volutpat quis nec lectus. Nulla vel sollicitudin velit, sit amet consequat lectus. Morbi sit amet ex quis tortor sodales finibus nec ac tellus. Morbi fringilla dui arcu, a tincidunt est pellentesque nec. Integer semper a est id dictum.</p>
+        </div>
+    </div>
+    
+    <div id="recommended-products" class="row">
+        <h2>Recommended Products</h2>
+        <div class="row row-cols-1 row-cols-md-3"><!--3 columns-->
+
+        <ng-container *ngFor="let product of recommendedProducts">
+            
+                <div class="col mb-3">
+                    <a id="recommended-products-link" href="/products/{{product.id}}">
+                    <div *ngIf="product.name=='Class FHD (1080P) LED Roku'; else falsecondition" class="card" >
+                        <figure class="figure tag tag-televisions">
+                            <img src="assets/img/img1.jpg" id ="img-recommended-products"  class="card-img-top" alt="...">
+                            <div class="card-body" id="body-recommended-products">
+                                <h5>$ {{product.price}} </h5>
+                            </div>
+                            <div>{{product.name}}</div>
+                        </figure>
+                    </div>
+                    <ng-template #falsecondition>
+                        <div class="card">
+                            <figure class="figure">
+                                <img src="assets/img/img1.jpg" id ="img-recommended-products"  class="card-img-top" alt="...">
+                                <div class="card-body" id="body-recommended-products">
+                                    <h5>$ {{product.price}} </h5>
+                                </div>
+                                <div>{{product.name}}</div>
+                            </figure>
+                        </div>
+                    </ng-template>
+                    </a>
+                </div>
+
+        </ng-container>
+
+        </div><!--3 columns-->
+    </div>
+    
+</div>
+
+<app-footer></app-footer>

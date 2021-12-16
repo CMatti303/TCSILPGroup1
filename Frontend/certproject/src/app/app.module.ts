@@ -14,6 +14,7 @@ import { ProductCategoryComponent } from './components/product-category/product-
 import { ProductService } from './services/product.service';
 
 import { ProfileComponent } from './components/profile/profile.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 
 
 
@@ -26,7 +27,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     LoginComponent,
     HomepageComponent,
     ProductCategoryComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
