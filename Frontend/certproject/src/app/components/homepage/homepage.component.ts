@@ -26,9 +26,8 @@ export class HomepageComponent implements OnInit {
 
   find8TopProducts(products: Product[]){
     for(let product of products){
-      if(product.rating==10 && this.topProducts.length<8) this.topProducts.push(product)
-      else if (product.rating==9 && this.topProducts.length<8) this.topProducts.push(product)
-      else if (product.rating==8 && this.topProducts.length<8) this.topProducts.push(product)
+      if(product.isTopProduct && this.topProducts.length<8) this.topProducts.push(product)
+      
     }
   }
 

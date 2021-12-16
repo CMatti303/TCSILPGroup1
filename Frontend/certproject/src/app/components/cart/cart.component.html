@@ -13,10 +13,10 @@
         <td >
             <span>1 X {{product.name}}</span><br>
             <span>Price {{product.price | currency}}</span><br>
-            <span>Discount {{product.price*(product.percentageDiscount/100) | currency}}</span><br>
+            <span>Discount {{product.discountPrice | currency}}</span><br>
             <button  (click)="removeProduct(product)" style="color:red; background-color: transparent; border:none">Remove</button>
         </td>
-        <td style="text-align: right">{{product.price-(product.price*(product.percentageDiscount/100)) | currency}}</td>
+        <td style="text-align: right">{{product.discountPrice | currency}}</td>
       </tr>
       <tr>
           <td data-testid="cart-grand-total" style="text-align: right">Grand Total</td>

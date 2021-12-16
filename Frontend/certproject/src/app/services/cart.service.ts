@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Product } from '../Product';
@@ -31,7 +32,7 @@ export class CartService {
     this.currentCart.subscribe(res=>newCart=res)
     this.currentGrandTotal.subscribe(res=>newTotal=res)
     newCart.push(product)
-    newTotal+=(product.price-(product.price*(product.percentageDiscount/100)))
+    newTotal+=product.discountPrice
     this.changeCart(newCart)
     this.changeGrandTotal(newTotal)
   }
