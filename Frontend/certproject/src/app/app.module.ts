@@ -14,6 +14,7 @@ import { ProductCategoryComponent } from './components/product-category/product-
 import { ProductService } from './services/product.service';
 
 import { ProfileComponent } from './components/profile/profile.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { CheckoutComponent } from './components/checkout/checkout.component';
@@ -30,8 +31,13 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     HomepageComponent,
     ProductCategoryComponent,
     ProfileComponent,
+
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+
+    ProductPageComponent,
+    CartComponent
+
   ],
   imports: [
     BrowserModule,

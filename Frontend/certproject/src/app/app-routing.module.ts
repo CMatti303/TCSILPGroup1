@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 
@@ -14,6 +15,7 @@ const routes: Routes = [
 {path:'login', component: LoginComponent},
 {path:'cart', component: CartComponent},
 {path:'categories/:category_id', component: ProductCategoryComponent},
+{path:'products/:product_id', component: ProductPageComponent},
 {path:'', component: HomepageComponent},
 
 {path: 'profile', component: ProfileComponent}
