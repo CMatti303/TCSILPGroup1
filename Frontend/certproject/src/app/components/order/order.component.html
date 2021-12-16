@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="spacer"></div>
+<div class="container">
+
+     <div class="col-8 offset-2" >
+     <h3 style="padding-top: 1rem; padding-bottom: 1rem;">Your Orders</h3>
+     <ng-template *ngIf="orderList.length!=0; then truecondition; else falsecondition">
+     </ng-template>
+     <ng-template #truecondition>
+          <table class="table table-bordered">
+               <tr *ngFor = "let order of orderList" class="mb-1">
+                    <td>
+                         {{order.order_no}}<br>
+                         {{order.email}}
+                    </td>
+                    <td>
+                         <a style="text-decoration: none;" routerLink="">Details</a>
+                    </td>
+               </tr>
+          </table>
+     </ng-template>
+     <ng-template #falsecondition>
+          <p>You haven't made any order yet.</p>
+     </ng-template>
+     </div>
+</div>
+<app-footer></app-footer>
