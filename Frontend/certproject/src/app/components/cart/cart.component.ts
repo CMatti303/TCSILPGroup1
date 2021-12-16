@@ -18,14 +18,14 @@ export class CartComponent implements OnInit {
     this._cartService.currentGrandTotal.subscribe(res=>this.grandTotal=res)
   }
 
-   removeProduct(product: Product){
+  removeProduct(product: Product){
     for(let i=0; i<this.cart.length; i++){
       if(this.cart[i]==product){
         this.cart = this.cart.slice(0, i).concat(this.cart.slice(i+1));
         break;
       }
     }
-    this.grandTotal-=(product.price-(product.price*(product.percentageDiscount/100)))
+    this.grandTotal-=product.discountPrice
     this._cartService.changeCart(this.cart)
     this._cartService.changeGrandTotal(this.grandTotal)
   } 
