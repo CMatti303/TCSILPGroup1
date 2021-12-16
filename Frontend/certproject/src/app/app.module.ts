@@ -16,6 +16,7 @@ import { ProductService } from './services/product.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartService } from './services/cart.service';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 
@@ -29,7 +30,8 @@ import { CartService } from './services/cart.service';
     HomepageComponent,
     ProductCategoryComponent,
     ProfileComponent,
-    CartComponent
+    CartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

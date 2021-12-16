@@ -6,9 +6,10 @@ import { ProductCategoryComponent } from './components/product-category/product-
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
-
+{path:'checkout', component:CheckoutComponent},
 {path:'register', component: RegistrationComponent},
 {path:'login', component: LoginComponent},
 {path:'cart', component: CartComponent},
