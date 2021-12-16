@@ -5,11 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ProfileComponent } from './components/profile/profile.component';
-<<<<<<< HEAD
 import { ProductPageComponent } from './components/product-page/product-page.component';
-=======
 import { CartComponent } from './components/cart/cart.component';
->>>>>>> 30aa9d1d1b4336e21d934f9471726723f964b1ef
 
 const routes: Routes = [
 
