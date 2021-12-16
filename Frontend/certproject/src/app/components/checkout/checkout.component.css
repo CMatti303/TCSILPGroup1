@@ -1,0 +1,16 @@
+.checkout-container form {
+    width: 700px;
+    margin: auto;
+}
+
+.checkout-container form button{
+   background-color: orange;
+}
+
+.checkout-container .form-group {
+    margin-bottom: 10px;
+}
+
+.form-submit {
+    text-align: end;
+}
