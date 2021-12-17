@@ -10,6 +10,7 @@ export class ProfileComponent implements OnInit {
 
   isHidden = true
   
+  // toggles visibility of edit address fields
   toggleHidden(){
     this.isHidden = ! this.isHidden
   }
