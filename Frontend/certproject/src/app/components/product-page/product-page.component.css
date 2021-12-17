@@ -73,3 +73,7 @@ background: orange;
 content: "#1 in Mobile phones";
 background: orange;
 }
+
+.spacer {
+    height: 50px
+}

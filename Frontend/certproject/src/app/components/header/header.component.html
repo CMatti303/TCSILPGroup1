@@ -21,7 +21,9 @@
         </ul>
         <form class="d-flex">
           <input class="form-control " type="search" placeholder="Search Products" aria-label="Search">
-          <a routerLink="/cart"><img src="assets/images/cart.png" style="padding-right: 5rem; padding-left: 5rem;"></a>
+          
+          <a routerLink="/cart"><img src="assets/images/cart.png" style="padding-right: 1rem; padding-left: 5rem;"></a>
+          <span style="padding-right: 5rem; padding-top: 0.5rem">({{numOfItemsInCart}})</span>
          <!--  <button class="btn btn-outline-success" type="submit">Search</button> -->
         </form>
       </div>
