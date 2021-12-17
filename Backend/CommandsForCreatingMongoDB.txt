@@ -1,0 +1,198 @@
+
+use ILPGroup1
+db.createCollection("categories_table")
+db.categories_table.insertMany(
+[{
+"id": 1,
+"name" : "Mobile Phone",
+"image": "assets/images/category/mobile.png"
+    
+},{
+"id": 2,
+"name" : "TV",
+"image": "assets/images/category/tv.png"
+},{
+"id": 3,
+"name" : "Furniture",
+"image": "assets/images/category/furniture.jpg"
+},{
+"id": 4,
+"name" : "Books",
+"image": "assets/images/category/books.jpg"
+},{
+"id": 5,
+"name" : "Electronics",
+"image": "assets/images/category/electronics.png"
+},{
+"id": 6,
+"name" : "Sports",
+"image": "assets/images/category/sports.jpg"
+}])
+
+=================================================================
+use ILPGroup1
+db.createCollection("products_table")
+db.products_table.insertMany(
+[{
+    "id":1,
+    "name" : "Samsung Galaxy S20",
+    "category_id": 1,
+    "price": 360,
+    "discountPrice": 350,
+    "image": "assets/images/product/mobile.png",
+    "description": "6.7-inch Super Retina XDR Display",
+    "createdOn": new Date(),
+    "isTopProduct": true
+},{
+    "id":2,
+    "name" : "iPhone 12 Pro Max",
+    "category_id": 1,
+    "price": 860,
+    "discountPrice": 550,
+    "image": "assets/images/product/mobile1.jpg",
+    "description": "128GB, Navy Blue",
+    "createdOn": new Date(),
+    "isTopProduct": true
+},{
+    "id":3,
+    "name" : "Straight Talk Motorola Moto G Play",
+    "category_id": 1,
+    "price": 560,
+    "discountPrice": 550,
+    "image": "assets/images/product/mobile2.jpg",
+    "description": "32GB, Blue",
+    "createdOn": new Date(),
+    "isTopProduct": true
+},{
+    "id":4,
+    "name" : "Toshiba",
+    "category_id": 2,
+    "price": 199,
+    "discountPrice": 199,
+    "image": "assets/images/product/tv.png",
+    "description": "Class V35 Series LED Full HD Smart Fire TV",
+    "createdOn": new Date(),
+    "isTopProduct": false
+},{
+    "id":5,
+    "name" : "Class FHD (1080P) LED Roku",
+    "category_id": 2,
+    "price": 360,
+    "discountPrice": 350,
+    "image": "assets/images/product/tv2.jpg",
+    "description": "Class V35 Series LED Full HD Smart Fire TV",
+    "createdOn": new Date(),
+    "isTopProduct": true
+},{
+    "id":6,
+    "name" : "High End Office Desks Ceo Furniture Office Table",
+    "category_id": 3,
+    "price": 500,
+    "discountPrice": 500,
+    "image": "assets/images/product/furniture.jpg",
+    "description": "Executive Desk Furniture L Shape Desk Luxury Ceo Table",
+    "createdOn": new Date(),
+    "isTopProduct": true
+},{
+    "id":7,
+    "name" : "High End Office Lamp",
+    "category_id": 3,
+    "price": 100,
+    "discountPrice": 90,
+    "image": "assets/images/product/lamp.jpg",
+    "description": "Executive Luxury Ceo Lamp",
+    "createdOn": new Date(),
+    "isTopProduct": true
+},{
+    "id":8,
+    "name" : "High End Office Chair",
+    "category_id": 3,
+    "price": 100,
+    "discountPrice": 75,
+    "image": "assets/images/product/chair.jpg",
+    "description": "Executive Desk Furniture Chair",
+    "createdOn": new Date(),
+    "isTopProduct": false
+},{
+    "id":9,
+    "name" : "Office Storage Cabinet",
+    "category_id": 3,
+    "price": 500,
+    "discountPrice": 455,
+    "image": "assets/images/product/cabinet.jpg",
+    "description": "Shelf Storage Cabinet",
+    "createdOn": new Date(),
+    "isTopProduct": false
+},{
+    "id":10,
+    "name" : "Atlas of the Heart",
+    "category_id": 4,
+    "price": 40,
+    "discountPrice": 35,
+    "image": "assets/images/product/book1.jpg",
+    "description": " Mapping Meaningful Connection and the Language of Human Experience",
+    "createdOn": new Date(),
+    "isTopProduct": true
+},{
+    "id":11,
+    "name" : "Atomic Habits",
+    "category_id": 4,
+    "price": 35,
+    "discountPrice": 20,
+    "image": "assets/images/product/book2.jpg",
+    "description": "An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+    "createdOn": new Date(),
+    "isTopProduct": false
+},{
+    "id":12,
+    "name" : "Interesting Stories For Curious People",
+    "category_id": 4,
+    "price": 50,
+    "discountPrice": 45,
+    "image": "assets/images/product/book3.jpg",
+    "description": " A Collection of Fascinating Stories About History, Science, Pop Culture and Just About Anything Else You Can Think of",
+    "createdOn": new Date(),
+    "isTopProduct": true
+},{
+    "id":13,
+    "name" : "Watch Series 7 GPS",
+    "category_id": 5,
+    "price": 60,
+    "discountPrice": 60,
+    "image": "assets/images/product/smart-watch.jpg",
+    "description": " 45mm Blue Aluminum Case with Abyss Blue Sport Band",
+    "createdOn": new Date(),
+    "isTopProduct": true
+},{
+    "id":14,
+    "name" : "Audio SR1 High Definition Headphone",
+    "category_id": 5,
+    "price": 120,
+    "discountPrice": 105,
+    "image": "assets/images/product/headphones.jpg",
+    "description": " High quality audiophile headset",
+    "createdOn": new Date(),
+    "isTopProduct": true
+},{
+    "id":15,
+    "name" : "Ultraboost 21 Running Shoe",
+    "category_id": 6,
+    "price": 120,
+    "discountPrice": 105,
+    "image": "assets/images/product/running-shoe.jpg",
+    "description": " Stretchweb outsole flexes naturally for an energized ride",
+    "createdOn": new Date(),
+    "isTopProduct": true
+},{
+    "id":16,
+    "name" : "Venum Stripes Sports Bag",
+    "category_id": 6,
+    "price": 100,
+    "discountPrice": 100,
+    "image": "assets/images/product/bag.jpg",
+    "description": " Dimensions: 680 x 330 x 260mm",
+    "createdOn": new Date(),
+    "isTopProduct": true
+}
+]
+)

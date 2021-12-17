@@ -42,7 +42,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 
     ProductPageComponent,
 
-    CartComponent
+    CartComponent,
 
     CheckoutComponent,
     CartComponent,
