@@ -18,7 +18,11 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { CartComponent } from './components/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
 import { OrdersComponent } from './components/orders/orders.component';
+
 
 
 
@@ -32,17 +36,26 @@ import { OrdersComponent } from './components/orders/orders.component';
     HomepageComponent,
     ProductCategoryComponent,
     ProfileComponent,
+
+    CartComponent,
+    CheckoutComponent,
+
     ProductPageComponent,
+
+    CartComponent
+
     CheckoutComponent,
     CartComponent,
     OrdersComponent
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ProductService, CartService],
   bootstrap: [AppComponent]

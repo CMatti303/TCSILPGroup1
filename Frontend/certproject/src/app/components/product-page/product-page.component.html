@@ -36,23 +36,25 @@
                     <a id="recommended-products-link" href="/products/{{product.id}}">
                     <div *ngIf="product.name=='Class FHD (1080P) LED Roku'; else falsecondition" class="card" >
                         <figure class="figure tag tag-televisions">
-                            <img src="assets/img/img1.jpg" id ="img-recommended-products"  class="card-img-top" alt="...">
+                            <img src="{{product.image}}" id ="img-recommended-products" style="height: 250px" class="card-img-top" alt="...">
                             <div class="card-body" id="body-recommended-products">
                                 <h5>$ {{product.price}} </h5>
                             </div>
                             <div>{{product.name}}</div>
                         </figure>
                     </div>
+                    <div class="spacer"></div>
                     <ng-template #falsecondition>
                         <div class="card">
                             <figure class="figure">
-                                <img src="assets/img/img1.jpg" id ="img-recommended-products"  class="card-img-top" alt="...">
+                                <img src="{{product.image}}" id ="img-recommended-products" style="height: 250px" class="card-img-top" alt="...">
                                 <div class="card-body" id="body-recommended-products">
                                     <h5>$ {{product.price}} </h5>
                                 </div>
                                 <div>{{product.name}}</div>
                             </figure>
                         </div>
+                        <div class="spacer"></div>
                     </ng-template>
                     </a>
                 </div>

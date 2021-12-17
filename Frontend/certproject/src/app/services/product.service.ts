@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Category } from '../Category';
 import { Product } from '../Product';
+import {HttpClient} from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +15,8 @@ export class ProductService {
       category_id: 1,
       price: 360,
       discountPrice:350,
-      image: "",
-      description: "6.7-inch Super Retina XDR Display ",
+      image: "assets/img/category/mobile.png",
+      description: "6.7-inch Super Retina XDR Display",
       createdOn: new Date(),
       isTopProduct: true
       },
@@ -24,7 +26,7 @@ export class ProductService {
       category_id: 1,
       price: 860,
       discountPrice:550,
-      image: "",
+      image: "assets/img/category/mobile.png",
       description: "128GB, Navy Blue ",
       createdOn: new Date(),
       isTopProduct: true
@@ -35,7 +37,7 @@ export class ProductService {
       category_id: 1,
       price: 560,
       discountPrice:550,
-      image: "",
+      image: "assets/img/category/mobile.png",
       description: "32GB, Blue ",
       createdOn: new Date(),
       isTopProduct: true
@@ -108,40 +110,66 @@ export class ProductService {
     }
   ]
 
-categoryArr: Category[]=[
+ categoryArr: Category[]=[
   {
     id: 1,
-    name: "Mobile Phones"
+    name: "Mobile Phones",
+    image:"src/app/assets/img/category/mobile.png"
   },
   {
     id: 2,
-    name: "TVs"
+    name: "TVs",
+    image:"src/app/assets/img/category/tv.png"
   },
   {
     id: 3,
-    name: "Furniture"
+    name: "Furniture",
+    image:"src/app/assets/img/category/furniture.png"
   },
-]
- constructor() { }
+  {
+    id: 4,
+    name: "Books",
+    image:"assets/images/category/books.jpg"
+  },
+  {
+    id: 5,
+    name: "Electronics",
+    image:"assets/images/category/electronics.png"
+  }, {
+    id: 6,
+    name: "Sports",
+    image:"assets/images/category/sports.jpg"
+  },
+] 
 
- getAllProducts(){
-   return this.productArray
+ categoryUrl="http://localhost:3000/api/v1/homepage/categories"
+ productUrl="http://localhost:3000/api/v1/products"
+
+ constructor(private http: HttpClient) { }
+
+  get3RandomCategories(): Observable<any>{
+  return this.http.get(this.categoryUrl)
  }
 
- getCategoryName(num:number){
-   let name=''
-   for(let item of this.categoryArr){
-     if (item.id==num)
-     name=item.name
-   }
-  return name
- }
+  getProducts(): Observable<any>{
+      return this.http.get(this.productUrl)
+  } 
 
- getProductsByCategory(id: number){
-  return this.productArray.filter(product=>{
-    if(product.category_id==id) return true
-    else return false
-  })
-}
+  getProductsByCategory(id: number): Observable<any>{
+    return this.http.get(this.productUrl+"/"+id)
+  }
+///hard coded methods
+  getAllProducts(){
+    return this.productArray
+  } 
+  
+  getCategoryName(num:number){
+    let name=''
+    for(let item of this.categoryArr){
+      if (item.id==num)
+      name=item.name
+    }
+   return name
+  }  
 
 }

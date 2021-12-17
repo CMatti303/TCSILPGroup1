@@ -19,10 +19,12 @@ export class ProductPageComponent implements OnInit {
   constructor(private _productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.products=this._productService.getAllProducts()
+    this._productService.getProducts().subscribe(res=>{
+      this.products=res
+      this.currentProduct = this.products.find(product => product.id === parseInt(Id))
+      this.findRecommendedProducts(this.products)
+    })
     const Id = this.route.snapshot.paramMap.get('product_id') as string
-    this.currentProduct = this.products.find(product => product.id === parseInt(Id))
-    this.findRecommendedProducts(this.products)
   }
 
   // Find recommended Products based on name and description

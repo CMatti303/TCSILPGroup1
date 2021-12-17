@@ -8,10 +8,12 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+
 import { OrdersComponent } from './components/orders/orders.component';
 
-const routes: Routes = [
 
+const routes: Routes = [
+{path:'checkout', component:CheckoutComponent},
 {path:'register', component: RegistrationComponent},
 {path:'login', component: LoginComponent},
 {path:'cart', component: CartComponent},
@@ -19,9 +21,10 @@ const routes: Routes = [
 {path:'products/:product_id', component: ProductPageComponent},
 {path:'checkout', component: CheckoutComponent},
 {path:'', component: HomepageComponent},
-{path:'orders', component: OrdersComponent},
-{path: 'profile', component: ProfileComponent}
 
+{path:'orders', component: OrdersComponent},
+
+{path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({

@@ -9,7 +9,6 @@ import { Product } from '../Product';
 export class CartService {
   emptyCart:Product[]=[]
   totalAmount: number=0
-
   constructor() { }
 
   private cart = new BehaviorSubject<Product[]>(this.emptyCart)
@@ -18,6 +17,7 @@ export class CartService {
   private grandTotal = new BehaviorSubject<number>(this.totalAmount)
   currentGrandTotal =this.grandTotal.asObservable()
   
+
   changeCart(newCart: Product[]){
     this.cart.next(newCart)
   }

@@ -1,5 +1,5 @@
 export interface Product{
-    id?: number;
+    id: number;
     name: String;
     category_id: number;
     price: number;
